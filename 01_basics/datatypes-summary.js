@@ -33,3 +33,35 @@ const myFunction = function(){
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3 - For studying the type of Datatype - Imp for interview
 
+
+// ++++++++++++++++++++++++++++++Memory----------------------------------
+
+// Two Types of Memory are there
+/* Stack memory (used for Primitive ) -> variable will get a copy of original variable when it is in Stack memory
+   Heap Memory ( used for Non-primitive) -> variable will get a reference of original value when it is in Heap memory
+
+*/
+
+let myName = "sandeepan"
+
+let anotherName = myName
+
+anotherName = "Messi"
+
+console.log(anotherName); // Messi  
+console.log(myName);  //sandeepan
+
+let user1 = {
+    email : "sandeep@google.com",
+    upi : "user1@ybl",
+}
+
+let user2 = user1
+
+user2.email = "ron@netflix.com"
+
+console.log(user1.email) // ron@netflix.com
+console.log(user2.email) // ron@netflix.com -- because we know objects are stored in heap memory and both user1 and user 2 gets the same reference
+
+
+
