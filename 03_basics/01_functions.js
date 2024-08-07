@@ -115,3 +115,84 @@ Now you can get the value stored in the variable result 2 as the
  console.log(loginUserMessage3()) // o/p-> Sam just logged in ( because the if username will never be undefined as Sam is by default parameter)
 
  console.log(loginUserMessage3("Virat kohli")) // o/p-> Virat kohli just logged in ( The parameters are easily overriden.)
+
+
+ /*
+ Shoppingcart situation - When you don't know how many parameter will come , we use Rest Operator.
+
+...num1 -> these 3 dots are called rest operator, when they are passed in the function parameters
+ */ 
+
+ function calculateCartPrice(...num1){
+   return num1
+ }
+
+ console.log(calculateCartPrice(10,20,30));  // o/p-> [ 10, 20, 30 ]
+
+/*
+Important for interview, we are passing val1,val2, and ...num1
+
+so the o/p-> [ 30, 40 ] why? because val1-> 10, val2->20 and num1 = takes the restof the values [30,40]
+
+*/
+ 
+ function calculateCartPrice2(val1, val2, ...num1) {
+   return num1
+ }
+
+ console.log(calculateCartPrice2(10,20,30,40));  // o/p-> [ 30, 40 ]
+
+ // passing object to a function 
+ const user = {
+   username : "sandeepan",
+   price : 199
+ }
+
+ function handleObject(anyObject) {
+   console.log(`Username is ${anyObject.username} and price is ${anyObject.price} `); // o/p-> Username is sandeepan and price is 199 
+ }
+
+//  handleObject(user) // o/p-> Username is sandeepan and price is 199 
+
+ // another way of passing object to function.
+
+ handleObject({
+   username: "sam",
+   price:399
+ })
+
+ // now if you pass directly object to the function-> the console output would be Username is sam and price is 399 
+
+
+ /*
+ Just like Objects, we can pass Array as well.
+ I am here wanting to get the 2nd value present in my 'mynewArray'.
+ Notice that, in the function parameter, we have passed 'getArray'. You can pass any name. Just Make sure that
+ you are using that same name when you are returning the value inside the function. 
+ and then you call outside with the desired array from where you want the value. Here it is , I am passing it 'myNewArray'
+
+ Easy? 😍
+
+ */
+ const myNewArray = [200,400,600,800]
+
+ function returnSecondValue(getArray){
+   return getArray[1]
+ }
+
+ console.log(returnSecondValue(myNewArray)); // o/p-> 400
+ 
+ // You can directly also pass the array as arguements just like objects, and here is the exammple.
+
+ console.log(returnSecondValue([100,200,300,600])); // o/p-> 200
+
+
+
+   
+ 
+
+
+
+
+
+ 
