@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async JS</title>
+  </head>
+  <body>
+    <h1>Namaste Async JS</h1>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const saySandeepan = function () {
+      console.log("Sandeepan");
+    };
+
+    const changeText = function () {
+      document.querySelector("h1").innerHTML = "best JS Series";
+    };
+    setTimeout(saySandeepan, 2000);
+    // setTimeout(changeText, 4000); // changes the text on screen after four seconds
+
+    const stopIt = setTimeout(changeText, 4000);
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearTimeout(stopIt); //stops from the timeOut (i.e Best JS series doesn't appear after two seconds)
+      console.log("STOPPED");
+    });
+  </script>
+</html>

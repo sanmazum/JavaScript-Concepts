@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async JS</title>
+  </head>
+  <body>
+    <h1>JavaScript with Sandeepan!</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const sayDate = function (str) {
+      console.log(str, Date.now()); // continues printing the third parameter- hi and current date
+    };
+    // setInterval(sayDate, 1000, "hi");
+    // way to stop the setInterval , after commenting line 17, hold in variable and pass to clearInterval()
+    const stopInterval = setInterval(sayDate, 1000, "hi");
+    clearInterval(stopInterval); // entirely stops printing hi and current date
+  </script>
+</html>
